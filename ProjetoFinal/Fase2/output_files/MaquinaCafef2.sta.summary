@@ -1,0 +1,113 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'FrequencyDivider:FrequencyDivider|clkOut'
+Slack : -22.176
+TNS   : -734.048
+
+Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
+Slack : -4.397
+TNS   : -65.157
+
+Type  : Slow 1200mV 85C Model Setup 'AtribuidorValor2:AtribuidorValor2|s_resultado[0]'
+Slack : -0.034
+TNS   : -0.034
+
+Type  : Slow 1200mV 85C Model Hold 'AtribuidorValor2:AtribuidorValor2|s_resultado[0]'
+Slack : -1.722
+TNS   : -1.722
+
+Type  : Slow 1200mV 85C Model Hold 'FrequencyDivider:FrequencyDivider|clkOut'
+Slack : 0.403
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
+Slack : 0.654
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -44.120
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'FrequencyDivider:FrequencyDivider|clkOut'
+Slack : -1.285
+TNS   : -268.565
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'AtribuidorValor2:AtribuidorValor2|s_resultado[0]'
+Slack : 0.295
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'FrequencyDivider:FrequencyDivider|clkOut'
+Slack : -19.873
+TNS   : -650.546
+
+Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -4.009
+TNS   : -55.643
+
+Type  : Slow 1200mV 0C Model Setup 'AtribuidorValor2:AtribuidorValor2|s_resultado[0]'
+Slack : 0.026
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'AtribuidorValor2:AtribuidorValor2|s_resultado[0]'
+Slack : -1.506
+TNS   : -1.506
+
+Type  : Slow 1200mV 0C Model Hold 'FrequencyDivider:FrequencyDivider|clkOut'
+Slack : 0.352
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.597
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -44.120
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'FrequencyDivider:FrequencyDivider|clkOut'
+Slack : -1.285
+TNS   : -268.565
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'AtribuidorValor2:AtribuidorValor2|s_resultado[0]'
+Slack : 0.341
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'FrequencyDivider:FrequencyDivider|clkOut'
+Slack : -10.103
+TNS   : -272.336
+
+Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -1.767
+TNS   : -17.309
+
+Type  : Fast 1200mV 0C Model Setup 'AtribuidorValor2:AtribuidorValor2|s_resultado[0]'
+Slack : 0.520
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'AtribuidorValor2:AtribuidorValor2|s_resultado[0]'
+Slack : -0.537
+TNS   : -0.537
+
+Type  : Fast 1200mV 0C Model Hold 'FrequencyDivider:FrequencyDivider|clkOut'
+Slack : 0.163
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.298
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -36.932
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'FrequencyDivider:FrequencyDivider|clkOut'
+Slack : -1.000
+TNS   : -209.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'AtribuidorValor2:AtribuidorValor2|s_resultado[0]'
+Slack : 0.326
+TNS   : 0.000
+
+------------------------------------------------------------

@@ -1,0 +1,103 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+
+
+entity MaquinaCafe_top is
+	port (	
+			KEY : in std_logic_vector(3 downto 0);
+			SW : in std_logic_vector(3 downto 0);
+			LEDR : out std_logic_vector(0 downto 0));
+end MaquinaCafe_top;
+
+architecture structural of MaquinaCafe_top is 
+
+	constant enabler : std_logic := '1';
+
+	signal clk :  std_logic;
+	signal deb0,deb1,deb2,deb3 :  std_logic;
+	signal mux0,mux1 : std_logic_vector(1 downto 0);
+	signal atrib0,atrib1 :  std_logic_vector( 7 downto 0 );
+	signal som,regsom: std_logic_vector (7 downto 0);
+	signal comp_reset : std_logic;
+	--signal KEY : std_logic_vector(3 downto 0);
+	--signal SW : std_logic_vector(3 downto 0);
+	--signal LEDR : std_logic_vector(0 downto 0);
+	
+	begin
+	
+	debouncer0: entity work.Debouncer(Behavioral)
+					generic map( N => 1)
+					port map(		clk 	=> clk,
+										 dirty_In =>KEY(0),
+										cleanOut  => deb0 );
+										
+	debouncer1: entity work.Debouncer(Behavioral)
+					generic map( N => 1)
+					port map(		clk 	=> clk,
+										dirty_In => KEY(1) ,
+										 cleanOut =>  deb1);
+	
+	debouncer2: entity work.Debouncer(Behavioral)
+					generic map( N => 1)
+					port map(		clk 	=> clk,
+										dirty_In  => KEY(2),
+										cleanOut => deb2);
+	
+	debouncer3: entity work.Debouncer(Behavioral)
+					generic map( N => 1)
+					port map(		clk 	=> clk,
+										dirty_In  => KEY(3) ,
+										 cleanOut => deb3);
+										
+	multiplexer0: entity work.Multiplexer(Behavioral)
+						port map(input0 => deb0,
+									input1 => deb1 ,
+									input2 => deb2,
+									input3 => deb3,
+									muxOut => mux0);
+					
+	
+	multiplexer1: entity work.Multiplexer(Behavioral)
+						port map(input0  => SW(0),
+									input1  => SW(1),
+									input2  => SW(2),
+									input3 => SW(3),
+									muxOut => mux1);
+	
+	AtribuidorValor: entity work.AtribuidorValor(Behav)
+							port map(clk => clk,
+									moeda  => mux0,
+									resultado => atrib0);
+									
+	AtribuidorValor2: entity work.AtribuidorValor2(Behav)
+							port map(clk => clk,
+									 produto => mux1,
+									resultado => atrib1);
+									
+	Somador: entity work.Somador(Behavioral)
+				generic map(N => 8)
+				port map(input0 => atrib0,
+							input1 => regsom,
+							output0 => som);
+							
+	Registo: entity work.RegisterN(Behav)
+				generic map( N=>8)
+				port map(clk =>clk,
+							enable => enabler,
+							reset => comp_reset,
+							dataIn => som,
+							dataOut => regsom);
+							
+				
+				
+	Comparador: entity work.Comparador(Behavioral)
+					port map(clk => clk,
+								enable => enabler,
+								reset => not enabler,
+								preco =>  atrib1,
+								 dinheiro =>  regsom, 
+								saida => LEDR(0),
+								saida_reset => comp_reset);
+								
+end structural;
+									

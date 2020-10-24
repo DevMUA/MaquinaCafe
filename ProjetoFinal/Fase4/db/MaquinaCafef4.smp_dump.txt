@@ -1,0 +1,18 @@
+
+State Machine - |MaquinaCafef4|lcd_controller_example_tl:LCD|lcd_controller:DISPLAY|state
+Name state.PROCESS_TXD_REQUESTS state.POWER_ON_PHASE_8 state.POWER_ON_PHASE_7 state.POWER_ON_PHASE_6 state.POWER_ON_PHASE_5 state.POWER_ON_PHASE_4 state.POWER_ON_PHASE_3 state.POWER_ON_PHASE_2 state.POWER_ON_PHASE_1 
+state.POWER_ON_PHASE_1 0 0 0 0 0 0 0 0 0 
+state.POWER_ON_PHASE_2 0 0 0 0 0 0 0 1 1 
+state.POWER_ON_PHASE_3 0 0 0 0 0 0 1 0 1 
+state.POWER_ON_PHASE_4 0 0 0 0 0 1 0 0 1 
+state.POWER_ON_PHASE_5 0 0 0 0 1 0 0 0 1 
+state.POWER_ON_PHASE_6 0 0 0 1 0 0 0 0 1 
+state.POWER_ON_PHASE_7 0 0 1 0 0 0 0 0 1 
+state.POWER_ON_PHASE_8 0 1 0 0 0 0 0 0 1 
+state.PROCESS_TXD_REQUESTS 1 0 0 0 0 0 0 0 1 
+
+State Machine - |MaquinaCafef4|Comparador:Comparador|s_currentState
+Name s_currentState.statereset s_currentState.stateopen s_currentState.state0 
+s_currentState.state0 0 0 0 
+s_currentState.stateopen 0 1 1 
+s_currentState.statereset 1 0 1 

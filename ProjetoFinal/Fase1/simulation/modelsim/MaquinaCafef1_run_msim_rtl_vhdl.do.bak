@@ -1,0 +1,19 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vcom -93 -work work {F:/ProjetoFinal/Fase1/Bin2Dec.vhd}
+vcom -93 -work work {F:/ProjetoFinal/Fase1/BCD.vhd}
+vcom -93 -work work {F:/ProjetoFinal/Fase1/MaquinaCafef1.vhd}
+vcom -93 -work work {F:/ProjetoFinal/Fase1/RegisterN.vhd}
+vcom -93 -work work {F:/ProjetoFinal/Fase1/Somador.vhd}
+vcom -93 -work work {F:/ProjetoFinal/Fase1/Multiplexer.vhd}
+vcom -93 -work work {F:/ProjetoFinal/Fase1/Debouncer.vhd}
+vcom -93 -work work {F:/ProjetoFinal/Fase1/Comparador.vhd}
+vcom -93 -work work {F:/ProjetoFinal/Fase1/AtribuidorValor2.vhd}
+vcom -93 -work work {F:/ProjetoFinal/Fase1/AtribuidorValor.vhd}
+vcom -93 -work work {F:/ProjetoFinal/Fase1/Subtractor.vhd}
+

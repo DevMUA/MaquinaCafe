@@ -1,0 +1,149 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'FrequencyDivider:FrequencyDivider|clkOut'
+Slack : -22.783
+TNS   : -1113.778
+
+Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
+Slack : -4.493
+TNS   : -66.151
+
+Type  : Slow 1200mV 85C Model Setup 'Bin2Dec:Bin2Dec|cnt[0]'
+Slack : -1.150
+TNS   : -18.133
+
+Type  : Slow 1200mV 85C Model Setup 'AtribuidorValor2:AtribuidorValor2|s_resultado[0]'
+Slack : -0.992
+TNS   : -0.992
+
+Type  : Slow 1200mV 85C Model Hold 'FrequencyDivider:FrequencyDivider|clkOut'
+Slack : -1.132
+TNS   : -1.132
+
+Type  : Slow 1200mV 85C Model Hold 'AtribuidorValor2:AtribuidorValor2|s_resultado[0]'
+Slack : -1.096
+TNS   : -1.096
+
+Type  : Slow 1200mV 85C Model Hold 'Bin2Dec:Bin2Dec|cnt[0]'
+Slack : -0.402
+TNS   : -0.402
+
+Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
+Slack : 0.654
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -44.120
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'FrequencyDivider:FrequencyDivider|clkOut'
+Slack : -1.285
+TNS   : -352.090
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'AtribuidorValor2:AtribuidorValor2|s_resultado[0]'
+Slack : 0.350
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Bin2Dec:Bin2Dec|cnt[0]'
+Slack : 0.442
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'FrequencyDivider:FrequencyDivider|clkOut'
+Slack : -20.436
+TNS   : -995.988
+
+Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -4.043
+TNS   : -56.332
+
+Type  : Slow 1200mV 0C Model Setup 'Bin2Dec:Bin2Dec|cnt[0]'
+Slack : -1.034
+TNS   : -16.111
+
+Type  : Slow 1200mV 0C Model Setup 'AtribuidorValor2:AtribuidorValor2|s_resultado[0]'
+Slack : -0.831
+TNS   : -0.831
+
+Type  : Slow 1200mV 0C Model Hold 'FrequencyDivider:FrequencyDivider|clkOut'
+Slack : -0.974
+TNS   : -0.974
+
+Type  : Slow 1200mV 0C Model Hold 'AtribuidorValor2:AtribuidorValor2|s_resultado[0]'
+Slack : -0.939
+TNS   : -0.939
+
+Type  : Slow 1200mV 0C Model Hold 'Bin2Dec:Bin2Dec|cnt[0]'
+Slack : -0.300
+TNS   : -0.300
+
+Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.598
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -44.120
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'FrequencyDivider:FrequencyDivider|clkOut'
+Slack : -1.285
+TNS   : -352.090
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Bin2Dec:Bin2Dec|cnt[0]'
+Slack : 0.423
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'AtribuidorValor2:AtribuidorValor2|s_resultado[0]'
+Slack : 0.433
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'FrequencyDivider:FrequencyDivider|clkOut'
+Slack : -10.411
+TNS   : -441.478
+
+Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -1.711
+TNS   : -17.293
+
+Type  : Fast 1200mV 0C Model Setup 'Bin2Dec:Bin2Dec|cnt[0]'
+Slack : -0.003
+TNS   : -0.003
+
+Type  : Fast 1200mV 0C Model Setup 'AtribuidorValor2:AtribuidorValor2|s_resultado[0]'
+Slack : 0.002
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'FrequencyDivider:FrequencyDivider|clkOut'
+Slack : -0.723
+TNS   : -0.723
+
+Type  : Fast 1200mV 0C Model Hold 'Bin2Dec:Bin2Dec|cnt[0]'
+Slack : -0.310
+TNS   : -1.448
+
+Type  : Fast 1200mV 0C Model Hold 'AtribuidorValor2:AtribuidorValor2|s_resultado[0]'
+Slack : -0.216
+TNS   : -0.216
+
+Type  : Fast 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.298
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -36.972
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'FrequencyDivider:FrequencyDivider|clkOut'
+Slack : -1.000
+TNS   : -274.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'AtribuidorValor2:AtribuidorValor2|s_resultado[0]'
+Slack : 0.325
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Bin2Dec:Bin2Dec|cnt[0]'
+Slack : 0.411
+TNS   : 0.000
+
+------------------------------------------------------------

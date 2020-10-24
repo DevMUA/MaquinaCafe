@@ -1,0 +1,29 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+
+entity delay is
+
+ port(
+ clk : in std_logic;
+ Input0 : in std_logic_vector(7 downto 0);
+ out0 : out std_logic := '0';;
+ );
+end delay;
+
+architecture Behavioral of debugging is
+begin
+	process(clk)
+	variable cnt : integer := 0;
+	variable cnt2 : integer := 0;
+	begin
+	if(rising_edge(clk)) then
+		cnt := cnt +1;
+		if(input0 = '1')then
+		cnt2 := cnt + 5;
+		end if;
+		if(cnt2 = cnt) then
+		out0 <= '1';
+		end if;
+		end if;
+		end process;
+end Behavioral;

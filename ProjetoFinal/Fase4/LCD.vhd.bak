@@ -1,0 +1,23 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+use IEEE.NUMERIC_STD.all;
+
+--generic( N : integer);
+
+entity LCD is
+port(
+clk : in std_logic;
+data : in std_logic_vector(2 downto 0);
+DB : out std_logic_vector(7 downto 0));
+end LCD;
+
+architecture Behav of LCD is
+begin
+	process(clk)
+begin
+	if (rising_edge(clk)) then
+		
+		end if;
+	end if;
+end process;
+end Behav;

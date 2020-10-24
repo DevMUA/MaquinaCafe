@@ -1,0 +1,18 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+
+entity debugging is
+
+ port(binInput : in std_logic_vector(2 downto 0);
+ out1 : out std_logic;
+  out2 : out std_logic;
+   out3 : out std_logic;
+ );
+end debugging;
+
+architecture Behavioral of debugging is
+begin
+	out1<= binInput(0);
+	out2<= binInput(1);
+	out3<= binInput(2);
+end Behavioral;

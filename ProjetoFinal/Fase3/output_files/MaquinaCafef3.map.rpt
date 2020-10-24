@@ -1,0 +1,1070 @@
+Analysis & Synthesis report for MaquinaCafef3
+Mon Jun 03 19:23:23 2019
+Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |MaquinaCafef3|Comparador:Comparador|s_currentState
+  9. User-Specified and Inferred Latches
+ 10. Registers Removed During Synthesis
+ 11. Removed Registers Triggering Further Register Optimizations
+ 12. General Register Statistics
+ 13. Inverted Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Parameter Settings for User Entity Instance: FrequencyDivider:FrequencyDivider
+ 16. Parameter Settings for Inferred Entity Instance: Bin2Dec:Bin2Dec|lpm_divide:Mod2
+ 17. Parameter Settings for Inferred Entity Instance: Bin2Dec:Bin2Dec|lpm_divide:Mod0
+ 18. Parameter Settings for Inferred Entity Instance: Bin2Dec:Bin2Dec|lpm_divide:Div0
+ 19. Parameter Settings for Inferred Entity Instance: Bin2Dec:Bin2Dec|lpm_divide:Mod1
+ 20. Parameter Settings for Inferred Entity Instance: Bin2Dec:Bin2Dec|lpm_divide:Div2
+ 21. Parameter Settings for Inferred Entity Instance: Bin2Dec:Bin2Dec|lpm_divide:Div4
+ 22. Parameter Settings for Inferred Entity Instance: Subtractor:Subtractor|lpm_divide:Mod0
+ 23. Parameter Settings for Inferred Entity Instance: Bin2Dec:Bin2Dec|lpm_divide:Div1
+ 24. Parameter Settings for Inferred Entity Instance: Bin2Dec:Bin2Dec|lpm_divide:Div3
+ 25. Parameter Settings for Inferred Entity Instance: StockMoedas:StockMoedas|lpm_divide:Div0
+ 26. Port Connectivity Checks: "Bin2Dec:Bin2Dec"
+ 27. Port Connectivity Checks: "binary_counter:binary_counter"
+ 28. Port Connectivity Checks: "Comparador:Comparador"
+ 29. Port Connectivity Checks: "RegisterN:Registo"
+ 30. Port Connectivity Checks: "Somador:Somador"
+ 31. Port Connectivity Checks: "FrequencyDivider:FrequencyDivider"
+ 32. Post-Synthesis Netlist Statistics for Top Partition
+ 33. Elapsed Time Per Partition
+ 34. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon Jun 03 19:23:23 2019       ;
+; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
+; Revision Name                      ; MaquinaCafef3                               ;
+; Top-level Entity Name              ; MaquinaCafef3                               ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 1,191                                       ;
+;     Total combinational functions  ; 1,151                                       ;
+;     Dedicated logic registers      ; 306                                         ;
+; Total registers                    ; 306                                         ;
+; Total pins                         ; 53                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                                      ; MaquinaCafef3      ; MaquinaCafef3      ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                              ; Enable             ; Enable             ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                                        ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                               ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                           ; Library ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------+---------+
+; Subtractor.vhd                   ; yes             ; User VHDL File               ; F:/ProjetoFinal/Fase3/Subtractor.vhd                   ;         ;
+; Somador.vhd                      ; yes             ; User VHDL File               ; F:/ProjetoFinal/Fase3/Somador.vhd                      ;         ;
+; RegisterN.vhd                    ; yes             ; User VHDL File               ; F:/ProjetoFinal/Fase3/RegisterN.vhd                    ;         ;
+; Multiplexer.vhd                  ; yes             ; User VHDL File               ; F:/ProjetoFinal/Fase3/Multiplexer.vhd                  ;         ;
+; MaquinaCafef3.vhd                ; yes             ; User VHDL File               ; F:/ProjetoFinal/Fase3/MaquinaCafef3.vhd                ;         ;
+; FrequencyDivider.vhd             ; yes             ; User VHDL File               ; F:/ProjetoFinal/Fase3/FrequencyDivider.vhd             ;         ;
+; Comparador.vhd                   ; yes             ; User VHDL File               ; F:/ProjetoFinal/Fase3/Comparador.vhd                   ;         ;
+; Blinking.vhd                     ; yes             ; User VHDL File               ; F:/ProjetoFinal/Fase3/Blinking.vhd                     ;         ;
+; binary_counter.vhd               ; yes             ; User VHDL File               ; F:/ProjetoFinal/Fase3/binary_counter.vhd               ;         ;
+; Bin2Dec.vhd                      ; yes             ; User VHDL File               ; F:/ProjetoFinal/Fase3/Bin2Dec.vhd                      ;         ;
+; BCD.vhd                          ; yes             ; User VHDL File               ; F:/ProjetoFinal/Fase3/BCD.vhd                          ;         ;
+; AtribuidorValor2.vhd             ; yes             ; User VHDL File               ; F:/ProjetoFinal/Fase3/AtribuidorValor2.vhd             ;         ;
+; AtribuidorValor.vhd              ; yes             ; User VHDL File               ; F:/ProjetoFinal/Fase3/AtribuidorValor.vhd              ;         ;
+; StockMoedas.vhd                  ; yes             ; User VHDL File               ; F:/ProjetoFinal/Fase3/StockMoedas.vhd                  ;         ;
+; delay.vhd                        ; yes             ; User VHDL File               ; F:/ProjetoFinal/Fase3/delay.vhd                        ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; f:/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; f:/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; f:/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
+; aglobal171.inc                   ; yes             ; Megafunction                 ; f:/quartus/libraries/megafunctions/aglobal171.inc      ;         ;
+; db/lpm_divide_q9m.tdf            ; yes             ; Auto-Generated Megafunction  ; F:/ProjetoFinal/Fase3/db/lpm_divide_q9m.tdf            ;         ;
+; db/sign_div_unsign_fkh.tdf       ; yes             ; Auto-Generated Megafunction  ; F:/ProjetoFinal/Fase3/db/sign_div_unsign_fkh.tdf       ;         ;
+; db/alt_u_div_i4f.tdf             ; yes             ; Auto-Generated Megafunction  ; F:/ProjetoFinal/Fase3/db/alt_u_div_i4f.tdf             ;         ;
+; db/add_sub_7pc.tdf               ; yes             ; Auto-Generated Megafunction  ; F:/ProjetoFinal/Fase3/db/add_sub_7pc.tdf               ;         ;
+; db/add_sub_8pc.tdf               ; yes             ; Auto-Generated Megafunction  ; F:/ProjetoFinal/Fase3/db/add_sub_8pc.tdf               ;         ;
+; db/lpm_divide_jhm.tdf            ; yes             ; Auto-Generated Megafunction  ; F:/ProjetoFinal/Fase3/db/lpm_divide_jhm.tdf            ;         ;
+; db/sign_div_unsign_bkh.tdf       ; yes             ; Auto-Generated Megafunction  ; F:/ProjetoFinal/Fase3/db/sign_div_unsign_bkh.tdf       ;         ;
+; db/alt_u_div_a4f.tdf             ; yes             ; Auto-Generated Megafunction  ; F:/ProjetoFinal/Fase3/db/alt_u_div_a4f.tdf             ;         ;
+; db/lpm_divide_mhm.tdf            ; yes             ; Auto-Generated Megafunction  ; F:/ProjetoFinal/Fase3/db/lpm_divide_mhm.tdf            ;         ;
+; db/sign_div_unsign_ekh.tdf       ; yes             ; Auto-Generated Megafunction  ; F:/ProjetoFinal/Fase3/db/sign_div_unsign_ekh.tdf       ;         ;
+; db/alt_u_div_g4f.tdf             ; yes             ; Auto-Generated Megafunction  ; F:/ProjetoFinal/Fase3/db/alt_u_div_g4f.tdf             ;         ;
+; db/lpm_divide_nhm.tdf            ; yes             ; Auto-Generated Megafunction  ; F:/ProjetoFinal/Fase3/db/lpm_divide_nhm.tdf            ;         ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------+---------+
+
+
++----------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                            ;
++---------------------------------------------+------------------------------------------+
+; Resource                                    ; Usage                                    ;
++---------------------------------------------+------------------------------------------+
+; Estimated Total logic elements              ; 1,191                                    ;
+;                                             ;                                          ;
+; Total combinational functions               ; 1151                                     ;
+; Logic element usage by number of LUT inputs ;                                          ;
+;     -- 4 input functions                    ; 307                                      ;
+;     -- 3 input functions                    ; 309                                      ;
+;     -- <=2 input functions                  ; 535                                      ;
+;                                             ;                                          ;
+; Logic elements by mode                      ;                                          ;
+;     -- normal mode                          ; 771                                      ;
+;     -- arithmetic mode                      ; 380                                      ;
+;                                             ;                                          ;
+; Total registers                             ; 306                                      ;
+;     -- Dedicated logic registers            ; 306                                      ;
+;     -- I/O registers                        ; 0                                        ;
+;                                             ;                                          ;
+; I/O pins                                    ; 53                                       ;
+;                                             ;                                          ;
+; Embedded Multiplier 9-bit elements          ; 0                                        ;
+;                                             ;                                          ;
+; Maximum fan-out node                        ; FrequencyDivider:FrequencyDivider|clkOut ;
+; Maximum fan-out                             ; 275                                      ;
+; Total fan-out                               ; 3949                                     ;
+; Average fan-out                             ; 2.53                                     ;
++---------------------------------------------+------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                    ; Entity Name         ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |MaquinaCafef3                            ; 1151 (0)            ; 306 (0)                   ; 0           ; 0            ; 0       ; 0         ; 53   ; 0            ; |MaquinaCafef3                                                                                                                         ; MaquinaCafef3       ; work         ;
+;    |AtribuidorValor2:AtribuidorValor2|    ; 6 (6)               ; 6 (6)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MaquinaCafef3|AtribuidorValor2:AtribuidorValor2                                                                                       ; AtribuidorValor2    ; work         ;
+;    |AtribuidorValor:AtribuidorValor|      ; 6 (6)               ; 7 (7)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MaquinaCafef3|AtribuidorValor:AtribuidorValor                                                                                         ; AtribuidorValor     ; work         ;
+;    |BCD:BCD0|                             ; 21 (21)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MaquinaCafef3|BCD:BCD0                                                                                                                ; BCD                 ; work         ;
+;    |BCD:BCD1|                             ; 21 (21)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MaquinaCafef3|BCD:BCD1                                                                                                                ; BCD                 ; work         ;
+;    |BCD:BCD2|                             ; 21 (21)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MaquinaCafef3|BCD:BCD2                                                                                                                ; BCD                 ; work         ;
+;    |BCD:BCD3|                             ; 21 (21)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MaquinaCafef3|BCD:BCD3                                                                                                                ; BCD                 ; work         ;
+;    |Bin2Dec:Bin2Dec|                      ; 530 (105)           ; 35 (35)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MaquinaCafef3|Bin2Dec:Bin2Dec                                                                                                         ; Bin2Dec             ; work         ;
+;       |lpm_divide:Div0|                   ; 56 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MaquinaCafef3|Bin2Dec:Bin2Dec|lpm_divide:Div0                                                                                         ; lpm_divide          ; work         ;
+;          |lpm_divide_jhm:auto_generated|  ; 56 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MaquinaCafef3|Bin2Dec:Bin2Dec|lpm_divide:Div0|lpm_divide_jhm:auto_generated                                                           ; lpm_divide_jhm      ; work         ;
+;             |sign_div_unsign_bkh:divider| ; 56 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MaquinaCafef3|Bin2Dec:Bin2Dec|lpm_divide:Div0|lpm_divide_jhm:auto_generated|sign_div_unsign_bkh:divider                               ; sign_div_unsign_bkh ; work         ;
+;                |alt_u_div_a4f:divider|    ; 56 (56)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MaquinaCafef3|Bin2Dec:Bin2Dec|lpm_divide:Div0|lpm_divide_jhm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_a4f:divider         ; alt_u_div_a4f       ; work         ;
+;       |lpm_divide:Div1|                   ; 56 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MaquinaCafef3|Bin2Dec:Bin2Dec|lpm_divide:Div1                                                                                         ; lpm_divide          ; work         ;
+;          |lpm_divide_jhm:auto_generated|  ; 56 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MaquinaCafef3|Bin2Dec:Bin2Dec|lpm_divide:Div1|lpm_divide_jhm:auto_generated                                                           ; lpm_divide_jhm      ; work         ;
+;             |sign_div_unsign_bkh:divider| ; 56 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MaquinaCafef3|Bin2Dec:Bin2Dec|lpm_divide:Div1|lpm_divide_jhm:auto_generated|sign_div_unsign_bkh:divider                               ; sign_div_unsign_bkh ; work         ;
+;                |alt_u_div_a4f:divider|    ; 56 (56)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MaquinaCafef3|Bin2Dec:Bin2Dec|lpm_divide:Div1|lpm_divide_jhm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_a4f:divider         ; alt_u_div_a4f       ; work         ;
+;       |lpm_divide:Div2|                   ; 56 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MaquinaCafef3|Bin2Dec:Bin2Dec|lpm_divide:Div2                                                                                         ; lpm_divide          ; work         ;
+;          |lpm_divide_jhm:auto_generated|  ; 56 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MaquinaCafef3|Bin2Dec:Bin2Dec|lpm_divide:Div2|lpm_divide_jhm:auto_generated                                                           ; lpm_divide_jhm      ; work         ;
+;             |sign_div_unsign_bkh:divider| ; 56 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MaquinaCafef3|Bin2Dec:Bin2Dec|lpm_divide:Div2|lpm_divide_jhm:auto_generated|sign_div_unsign_bkh:divider                               ; sign_div_unsign_bkh ; work         ;
+;                |alt_u_div_a4f:divider|    ; 56 (56)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MaquinaCafef3|Bin2Dec:Bin2Dec|lpm_divide:Div2|lpm_divide_jhm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_a4f:divider         ; alt_u_div_a4f       ; work         ;
+;       |lpm_divide:Div3|                   ; 25 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MaquinaCafef3|Bin2Dec:Bin2Dec|lpm_divide:Div3                                                                                         ; lpm_divide          ; work         ;
+;          |lpm_divide_mhm:auto_generated|  ; 25 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MaquinaCafef3|Bin2Dec:Bin2Dec|lpm_divide:Div3|lpm_divide_mhm:auto_generated                                                           ; lpm_divide_mhm      ; work         ;
+;             |sign_div_unsign_ekh:divider| ; 25 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MaquinaCafef3|Bin2Dec:Bin2Dec|lpm_divide:Div3|lpm_divide_mhm:auto_generated|sign_div_unsign_ekh:divider                               ; sign_div_unsign_ekh ; work         ;
+;                |alt_u_div_g4f:divider|    ; 25 (25)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MaquinaCafef3|Bin2Dec:Bin2Dec|lpm_divide:Div3|lpm_divide_mhm:auto_generated|sign_div_unsign_ekh:divider|alt_u_div_g4f:divider         ; alt_u_div_g4f       ; work         ;
+;       |lpm_divide:Div4|                   ; 56 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MaquinaCafef3|Bin2Dec:Bin2Dec|lpm_divide:Div4                                                                                         ; lpm_divide          ; work         ;
+;          |lpm_divide_jhm:auto_generated|  ; 56 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MaquinaCafef3|Bin2Dec:Bin2Dec|lpm_divide:Div4|lpm_divide_jhm:auto_generated                                                           ; lpm_divide_jhm      ; work         ;
+;             |sign_div_unsign_bkh:divider| ; 56 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MaquinaCafef3|Bin2Dec:Bin2Dec|lpm_divide:Div4|lpm_divide_jhm:auto_generated|sign_div_unsign_bkh:divider                               ; sign_div_unsign_bkh ; work         ;
+;                |alt_u_div_a4f:divider|    ; 56 (56)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MaquinaCafef3|Bin2Dec:Bin2Dec|lpm_divide:Div4|lpm_divide_jhm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_a4f:divider         ; alt_u_div_a4f       ; work         ;
+;       |lpm_divide:Mod0|                   ; 74 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MaquinaCafef3|Bin2Dec:Bin2Dec|lpm_divide:Mod0                                                                                         ; lpm_divide          ; work         ;
+;          |lpm_divide_q9m:auto_generated|  ; 74 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MaquinaCafef3|Bin2Dec:Bin2Dec|lpm_divide:Mod0|lpm_divide_q9m:auto_generated                                                           ; lpm_divide_q9m      ; work         ;
+;             |sign_div_unsign_fkh:divider| ; 74 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MaquinaCafef3|Bin2Dec:Bin2Dec|lpm_divide:Mod0|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider                               ; sign_div_unsign_fkh ; work         ;
+;                |alt_u_div_i4f:divider|    ; 74 (74)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MaquinaCafef3|Bin2Dec:Bin2Dec|lpm_divide:Mod0|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider|alt_u_div_i4f:divider         ; alt_u_div_i4f       ; work         ;
+;       |lpm_divide:Mod1|                   ; 28 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MaquinaCafef3|Bin2Dec:Bin2Dec|lpm_divide:Mod1                                                                                         ; lpm_divide          ; work         ;
+;          |lpm_divide_q9m:auto_generated|  ; 28 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MaquinaCafef3|Bin2Dec:Bin2Dec|lpm_divide:Mod1|lpm_divide_q9m:auto_generated                                                           ; lpm_divide_q9m      ; work         ;
+;             |sign_div_unsign_fkh:divider| ; 28 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MaquinaCafef3|Bin2Dec:Bin2Dec|lpm_divide:Mod1|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider                               ; sign_div_unsign_fkh ; work         ;
+;                |alt_u_div_i4f:divider|    ; 28 (28)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MaquinaCafef3|Bin2Dec:Bin2Dec|lpm_divide:Mod1|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider|alt_u_div_i4f:divider         ; alt_u_div_i4f       ; work         ;
+;       |lpm_divide:Mod2|                   ; 74 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MaquinaCafef3|Bin2Dec:Bin2Dec|lpm_divide:Mod2                                                                                         ; lpm_divide          ; work         ;
+;          |lpm_divide_q9m:auto_generated|  ; 74 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MaquinaCafef3|Bin2Dec:Bin2Dec|lpm_divide:Mod2|lpm_divide_q9m:auto_generated                                                           ; lpm_divide_q9m      ; work         ;
+;             |sign_div_unsign_fkh:divider| ; 74 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MaquinaCafef3|Bin2Dec:Bin2Dec|lpm_divide:Mod2|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider                               ; sign_div_unsign_fkh ; work         ;
+;                |alt_u_div_i4f:divider|    ; 74 (74)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MaquinaCafef3|Bin2Dec:Bin2Dec|lpm_divide:Mod2|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider|alt_u_div_i4f:divider         ; alt_u_div_i4f       ; work         ;
+;    |Blinking:Blinking|                    ; 117 (117)           ; 98 (98)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MaquinaCafef3|Blinking:Blinking                                                                                                       ; Blinking            ; work         ;
+;    |Comparador:Comparador|                ; 12 (12)             ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MaquinaCafef3|Comparador:Comparador                                                                                                   ; Comparador          ; work         ;
+;    |FrequencyDivider:FrequencyDivider|    ; 54 (54)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MaquinaCafef3|FrequencyDivider:FrequencyDivider                                                                                       ; FrequencyDivider    ; work         ;
+;    |Multiplexer:multiplexer0|             ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MaquinaCafef3|Multiplexer:multiplexer0                                                                                                ; Multiplexer         ; work         ;
+;    |RegisterN:Registo|                    ; 8 (8)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MaquinaCafef3|RegisterN:Registo                                                                                                       ; RegisterN           ; work         ;
+;    |Somador:Somador|                      ; 11 (11)             ; 15 (15)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MaquinaCafef3|Somador:Somador                                                                                                         ; Somador             ; work         ;
+;    |StockMoedas:StockMoedas|              ; 145 (65)            ; 49 (49)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MaquinaCafef3|StockMoedas:StockMoedas                                                                                                 ; StockMoedas         ; work         ;
+;       |lpm_divide:Div0|                   ; 80 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MaquinaCafef3|StockMoedas:StockMoedas|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_nhm:auto_generated|  ; 80 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MaquinaCafef3|StockMoedas:StockMoedas|lpm_divide:Div0|lpm_divide_nhm:auto_generated                                                   ; lpm_divide_nhm      ; work         ;
+;             |sign_div_unsign_fkh:divider| ; 80 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MaquinaCafef3|StockMoedas:StockMoedas|lpm_divide:Div0|lpm_divide_nhm:auto_generated|sign_div_unsign_fkh:divider                       ; sign_div_unsign_fkh ; work         ;
+;                |alt_u_div_i4f:divider|    ; 80 (80)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MaquinaCafef3|StockMoedas:StockMoedas|lpm_divide:Div0|lpm_divide_nhm:auto_generated|sign_div_unsign_fkh:divider|alt_u_div_i4f:divider ; alt_u_div_i4f       ; work         ;
+;    |Subtractor:Subtractor|                ; 136 (47)            ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MaquinaCafef3|Subtractor:Subtractor                                                                                                   ; Subtractor          ; work         ;
+;       |lpm_divide:Mod0|                   ; 89 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MaquinaCafef3|Subtractor:Subtractor|lpm_divide:Mod0                                                                                   ; lpm_divide          ; work         ;
+;          |lpm_divide_q9m:auto_generated|  ; 89 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MaquinaCafef3|Subtractor:Subtractor|lpm_divide:Mod0|lpm_divide_q9m:auto_generated                                                     ; lpm_divide_q9m      ; work         ;
+;             |sign_div_unsign_fkh:divider| ; 89 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MaquinaCafef3|Subtractor:Subtractor|lpm_divide:Mod0|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider                         ; sign_div_unsign_fkh ; work         ;
+;                |alt_u_div_i4f:divider|    ; 89 (89)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MaquinaCafef3|Subtractor:Subtractor|lpm_divide:Mod0|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider|alt_u_div_i4f:divider   ; alt_u_div_i4f       ; work         ;
+;    |binary_counter:binary_counter|        ; 28 (28)             ; 12 (12)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MaquinaCafef3|binary_counter:binary_counter                                                                                           ; binary_counter      ; work         ;
+;    |delay:delay|                          ; 13 (13)             ; 9 (9)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |MaquinaCafef3|delay:delay                                                                                                             ; delay               ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------+
+; State Machine - |MaquinaCafef3|Comparador:Comparador|s_currentState                                      ;
++---------------------------+---------------------------+--------------------------+-----------------------+
+; Name                      ; s_currentState.statereset ; s_currentState.stateopen ; s_currentState.state0 ;
++---------------------------+---------------------------+--------------------------+-----------------------+
+; s_currentState.state0     ; 0                         ; 0                        ; 0                     ;
+; s_currentState.stateopen  ; 0                         ; 1                        ; 1                     ;
+; s_currentState.statereset ; 1                         ; 0                        ; 1                     ;
++---------------------------+---------------------------+--------------------------+-----------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                            ;
++-----------------------------------------------------+---------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal             ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------------------+------------------------+
+; Bin2Dec:Bin2Dec|DecU[5]                             ; Bin2Dec:Bin2Dec|Equal1          ; yes                    ;
+; Bin2Dec:Bin2Dec|DecU[6]                             ; Bin2Dec:Bin2Dec|Equal1          ; yes                    ;
+; Bin2Dec:Bin2Dec|DecU[7]                             ; Bin2Dec:Bin2Dec|Equal1          ; yes                    ;
+; Bin2Dec:Bin2Dec|DecU[0]                             ; Bin2Dec:Bin2Dec|Equal1          ; yes                    ;
+; Bin2Dec:Bin2Dec|DecU[1]                             ; Bin2Dec:Bin2Dec|Equal1          ; yes                    ;
+; Bin2Dec:Bin2Dec|DecU[2]                             ; Bin2Dec:Bin2Dec|Equal1          ; yes                    ;
+; Bin2Dec:Bin2Dec|DecU[3]                             ; Bin2Dec:Bin2Dec|Equal1          ; yes                    ;
+; Bin2Dec:Bin2Dec|DecU[4]                             ; Bin2Dec:Bin2Dec|Equal1          ; yes                    ;
+; Bin2Dec:Bin2Dec|DecD[5]                             ; Bin2Dec:Bin2Dec|Equal1          ; yes                    ;
+; Bin2Dec:Bin2Dec|DecD[6]                             ; Bin2Dec:Bin2Dec|Equal1          ; yes                    ;
+; Bin2Dec:Bin2Dec|DecD[7]                             ; Bin2Dec:Bin2Dec|Equal1          ; yes                    ;
+; Bin2Dec:Bin2Dec|DecD[0]                             ; Bin2Dec:Bin2Dec|Equal1          ; yes                    ;
+; Bin2Dec:Bin2Dec|DecD[1]                             ; Bin2Dec:Bin2Dec|Equal1          ; yes                    ;
+; Bin2Dec:Bin2Dec|DecD[2]                             ; Bin2Dec:Bin2Dec|Equal1          ; yes                    ;
+; Bin2Dec:Bin2Dec|DecD[3]                             ; Bin2Dec:Bin2Dec|Equal1          ; yes                    ;
+; Bin2Dec:Bin2Dec|DecD[4]                             ; Bin2Dec:Bin2Dec|Equal1          ; yes                    ;
+; Bin2Dec:Bin2Dec|DecC[5]                             ; Bin2Dec:Bin2Dec|Equal1          ; yes                    ;
+; Bin2Dec:Bin2Dec|DecC[6]                             ; Bin2Dec:Bin2Dec|Equal1          ; yes                    ;
+; Bin2Dec:Bin2Dec|DecC[7]                             ; Bin2Dec:Bin2Dec|Equal1          ; yes                    ;
+; Bin2Dec:Bin2Dec|DecC[0]                             ; Bin2Dec:Bin2Dec|Equal1          ; yes                    ;
+; Bin2Dec:Bin2Dec|DecC[1]                             ; Bin2Dec:Bin2Dec|Equal1          ; yes                    ;
+; Bin2Dec:Bin2Dec|DecC[2]                             ; Bin2Dec:Bin2Dec|Equal1          ; yes                    ;
+; Bin2Dec:Bin2Dec|DecC[3]                             ; Bin2Dec:Bin2Dec|Equal1          ; yes                    ;
+; Bin2Dec:Bin2Dec|DecC[4]                             ; Bin2Dec:Bin2Dec|Equal1          ; yes                    ;
+; Bin2Dec:Bin2Dec|DecM[5]                             ; Bin2Dec:Bin2Dec|Equal1          ; yes                    ;
+; Bin2Dec:Bin2Dec|DecM[6]                             ; Bin2Dec:Bin2Dec|Equal1          ; yes                    ;
+; Bin2Dec:Bin2Dec|DecM[7]                             ; Bin2Dec:Bin2Dec|Equal1          ; yes                    ;
+; Bin2Dec:Bin2Dec|DecM[0]                             ; Bin2Dec:Bin2Dec|Equal1          ; yes                    ;
+; Bin2Dec:Bin2Dec|DecM[1]                             ; Bin2Dec:Bin2Dec|Equal1          ; yes                    ;
+; Bin2Dec:Bin2Dec|DecM[2]                             ; Bin2Dec:Bin2Dec|Equal1          ; yes                    ;
+; Bin2Dec:Bin2Dec|DecM[3]                             ; Bin2Dec:Bin2Dec|Equal1          ; yes                    ;
+; Bin2Dec:Bin2Dec|DecM[4]                             ; Bin2Dec:Bin2Dec|Equal1          ; yes                    ;
+; Comparador:Comparador|saida_reset                   ; Comparador:Comparador|Selector2 ; yes                    ;
+; Number of user-specified and inferred latches = 33  ;                                 ;                        ;
++-----------------------------------------------------+---------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                              ;
++--------------------------------------------------+--------------------------------------------------------------+
+; Register name                                    ; Reason for Removal                                           ;
++--------------------------------------------------+--------------------------------------------------------------+
+; AtribuidorValor:AtribuidorValor|s_resultado[6,7] ; Stuck at GND due to stuck port data_in                       ;
+; Somador:Somador|A[6,7]                           ; Stuck at GND due to stuck port data_in                       ;
+; Somador:Somador|B[0]                             ; Merged with Subtractor:Subtractor|s_b[0]                     ;
+; Somador:Somador|B[1]                             ; Merged with Subtractor:Subtractor|s_b[1]                     ;
+; Somador:Somador|B[2]                             ; Merged with Subtractor:Subtractor|s_b[2]                     ;
+; Somador:Somador|B[3]                             ; Merged with Subtractor:Subtractor|s_b[3]                     ;
+; Somador:Somador|B[4]                             ; Merged with Subtractor:Subtractor|s_b[4]                     ;
+; Somador:Somador|B[5]                             ; Merged with Subtractor:Subtractor|s_b[5]                     ;
+; Somador:Somador|B[6]                             ; Merged with Subtractor:Subtractor|s_b[6]                     ;
+; Somador:Somador|B[7]                             ; Merged with Subtractor:Subtractor|s_b[7]                     ;
+; AtribuidorValor2:AtribuidorValor2|s_resultado[7] ; Merged with AtribuidorValor2:AtribuidorValor2|s_resultado[6] ;
+; AtribuidorValor2:AtribuidorValor2|s_resultado[4] ; Merged with AtribuidorValor2:AtribuidorValor2|s_resultado[1] ;
+; AtribuidorValor2:AtribuidorValor2|s_resultado[3] ; Merged with AtribuidorValor2:AtribuidorValor2|s_resultado[2] ;
+; Subtractor:Subtractor|cnt[7]                     ; Merged with Bin2Dec:Bin2Dec|cnt[7]                           ;
+; binary_counter:binary_counter|cnt[7]             ; Merged with Bin2Dec:Bin2Dec|cnt[7]                           ;
+; delay:delay|cnt[7]                               ; Merged with Bin2Dec:Bin2Dec|cnt[7]                           ;
+; Subtractor:Subtractor|cnt[6]                     ; Merged with Bin2Dec:Bin2Dec|cnt[6]                           ;
+; binary_counter:binary_counter|cnt[6]             ; Merged with Bin2Dec:Bin2Dec|cnt[6]                           ;
+; delay:delay|cnt[6]                               ; Merged with Bin2Dec:Bin2Dec|cnt[6]                           ;
+; Subtractor:Subtractor|cnt[5]                     ; Merged with Bin2Dec:Bin2Dec|cnt[5]                           ;
+; binary_counter:binary_counter|cnt[5]             ; Merged with Bin2Dec:Bin2Dec|cnt[5]                           ;
+; delay:delay|cnt[5]                               ; Merged with Bin2Dec:Bin2Dec|cnt[5]                           ;
+; Subtractor:Subtractor|cnt[4]                     ; Merged with Bin2Dec:Bin2Dec|cnt[4]                           ;
+; binary_counter:binary_counter|cnt[4]             ; Merged with Bin2Dec:Bin2Dec|cnt[4]                           ;
+; delay:delay|cnt[4]                               ; Merged with Bin2Dec:Bin2Dec|cnt[4]                           ;
+; Subtractor:Subtractor|cnt[3]                     ; Merged with Bin2Dec:Bin2Dec|cnt[3]                           ;
+; binary_counter:binary_counter|cnt[3]             ; Merged with Bin2Dec:Bin2Dec|cnt[3]                           ;
+; delay:delay|cnt[3]                               ; Merged with Bin2Dec:Bin2Dec|cnt[3]                           ;
+; Subtractor:Subtractor|cnt[2]                     ; Merged with Bin2Dec:Bin2Dec|cnt[2]                           ;
+; binary_counter:binary_counter|cnt[2]             ; Merged with Bin2Dec:Bin2Dec|cnt[2]                           ;
+; delay:delay|cnt[2]                               ; Merged with Bin2Dec:Bin2Dec|cnt[2]                           ;
+; Subtractor:Subtractor|cnt[1]                     ; Merged with Bin2Dec:Bin2Dec|cnt[1]                           ;
+; binary_counter:binary_counter|cnt[1]             ; Merged with Bin2Dec:Bin2Dec|cnt[1]                           ;
+; delay:delay|cnt[1]                               ; Merged with Bin2Dec:Bin2Dec|cnt[1]                           ;
+; Subtractor:Subtractor|cnt[0]                     ; Merged with Bin2Dec:Bin2Dec|cnt[0]                           ;
+; binary_counter:binary_counter|cnt[0]             ; Merged with Bin2Dec:Bin2Dec|cnt[0]                           ;
+; delay:delay|cnt[0]                               ; Merged with Bin2Dec:Bin2Dec|cnt[0]                           ;
+; Subtractor:Subtractor|s_a[7]                     ; Merged with Subtractor:Subtractor|s_a[6]                     ;
+; Subtractor:Subtractor|s_a[4]                     ; Merged with Subtractor:Subtractor|s_a[1]                     ;
+; Subtractor:Subtractor|s_a[3]                     ; Merged with Subtractor:Subtractor|s_a[2]                     ;
+; AtribuidorValor:AtribuidorValor|a                ; Stuck at VCC due to stuck port data_in                       ;
+; AtribuidorValor:AtribuidorValor|b                ; Stuck at VCC due to stuck port data_in                       ;
+; AtribuidorValor:AtribuidorValor|c                ; Stuck at VCC due to stuck port data_in                       ;
+; StockMoedas:StockMoedas|count2[6,7]              ; Stuck at GND due to stuck port data_in                       ;
+; Bin2Dec:Bin2Dec|centenas[6,7]                    ; Merged with Bin2Dec:Bin2Dec|centenas[5]                      ;
+; Bin2Dec:Bin2Dec|mil[5..7]                        ; Merged with Bin2Dec:Bin2Dec|centenas[5]                      ;
+; StockMoedas:StockMoedas|s_troco[0]               ; Merged with Bin2Dec:Bin2Dec|unidades[0]                      ;
+; Total Number of Removed Registers = 53           ;                                                              ;
++--------------------------------------------------+--------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                       ;
++------------------------------------------------+---------------------------+----------------------------------------------------------------------+
+; Register name                                  ; Reason for Removal        ; Registers Removed due to This Register                               ;
++------------------------------------------------+---------------------------+----------------------------------------------------------------------+
+; AtribuidorValor:AtribuidorValor|a              ; Stuck at VCC              ; AtribuidorValor:AtribuidorValor|b, AtribuidorValor:AtribuidorValor|c ;
+;                                                ; due to stuck port data_in ;                                                                      ;
+; AtribuidorValor:AtribuidorValor|s_resultado[6] ; Stuck at GND              ; Somador:Somador|A[6]                                                 ;
+;                                                ; due to stuck port data_in ;                                                                      ;
+; AtribuidorValor:AtribuidorValor|s_resultado[7] ; Stuck at GND              ; Somador:Somador|A[7]                                                 ;
+;                                                ; due to stuck port data_in ;                                                                      ;
++------------------------------------------------+---------------------------+----------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 306   ;
+; Number of registers using Synchronous Clear  ; 8     ;
+; Number of registers using Synchronous Load   ; 3     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 134   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; StockMoedas:StockMoedas|leds[0]         ; 1       ;
+; StockMoedas:StockMoedas|leds[1]         ; 1       ;
+; StockMoedas:StockMoedas|leds[2]         ; 1       ;
+; StockMoedas:StockMoedas|leds[3]         ; 1       ;
+; StockMoedas:StockMoedas|leds[4]         ; 1       ;
+; StockMoedas:StockMoedas|leds[5]         ; 1       ;
+; StockMoedas:StockMoedas|leds[6]         ; 1       ;
+; StockMoedas:StockMoedas|leds[7]         ; 1       ;
+; StockMoedas:StockMoedas|leds[8]         ; 1       ;
+; StockMoedas:StockMoedas|leds[9]         ; 1       ;
+; StockMoedas:StockMoedas|stock[3]        ; 9       ;
+; StockMoedas:StockMoedas|stock[1]        ; 14      ;
+; StockMoedas:StockMoedas|stock2[3]       ; 1       ;
+; StockMoedas:StockMoedas|stock2[1]       ; 1       ;
+; Total number of inverted registers = 14 ;         ;
++-----------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |MaquinaCafef3|AtribuidorValor2:AtribuidorValor2|s_resultado[2] ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |MaquinaCafef3|Blinking:Blinking|blink1_exit[0]                 ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |MaquinaCafef3|Somador:Somador|X[5]                             ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |MaquinaCafef3|StockMoedas:StockMoedas|stock[4]                 ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |MaquinaCafef3|AtribuidorValor:AtribuidorValor|s_resultado[2]   ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |MaquinaCafef3|Subtractor:Subtractor|res[7]                     ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |MaquinaCafef3|Subtractor:Subtractor|s_r[7]                     ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |MaquinaCafef3|StockMoedas:StockMoedas|stock[1]                 ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |MaquinaCafef3|StockMoedas:StockMoedas|leds[7]                  ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |MaquinaCafef3|Multiplexer:multiplexer1|muxOut[1]               ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 12 LEs               ; 8 LEs                  ; No         ; |MaquinaCafef3|Multiplexer:multiplexer0|muxOut[1]               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: FrequencyDivider:FrequencyDivider ;
++----------------+----------+----------------------------------------------------+
+; Parameter Name ; Value    ; Type                                               ;
++----------------+----------+----------------------------------------------------+
+; k              ; 10000000 ; Signed Integer                                     ;
++----------------+----------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Bin2Dec:Bin2Dec|lpm_divide:Mod2 ;
++------------------------+----------------+----------------------------------------+
+; Parameter Name         ; Value          ; Type                                   ;
++------------------------+----------------+----------------------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                                ;
+; LPM_WIDTHD             ; 8              ; Untyped                                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                ;
+; LPM_PIPELINE           ; 0              ; Untyped                                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                ;
+; CBXI_PARAMETER         ; lpm_divide_q9m ; Untyped                                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                         ;
++------------------------+----------------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Bin2Dec:Bin2Dec|lpm_divide:Mod0 ;
++------------------------+----------------+----------------------------------------+
+; Parameter Name         ; Value          ; Type                                   ;
++------------------------+----------------+----------------------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                                ;
+; LPM_WIDTHD             ; 8              ; Untyped                                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                ;
+; LPM_PIPELINE           ; 0              ; Untyped                                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                ;
+; CBXI_PARAMETER         ; lpm_divide_q9m ; Untyped                                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                         ;
++------------------------+----------------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Bin2Dec:Bin2Dec|lpm_divide:Div0 ;
++------------------------+----------------+----------------------------------------+
+; Parameter Name         ; Value          ; Type                                   ;
++------------------------+----------------+----------------------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                                ;
+; LPM_WIDTHD             ; 4              ; Untyped                                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                ;
+; LPM_PIPELINE           ; 0              ; Untyped                                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                ;
+; CBXI_PARAMETER         ; lpm_divide_jhm ; Untyped                                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                         ;
++------------------------+----------------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Bin2Dec:Bin2Dec|lpm_divide:Mod1 ;
++------------------------+----------------+----------------------------------------+
+; Parameter Name         ; Value          ; Type                                   ;
++------------------------+----------------+----------------------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                                ;
+; LPM_WIDTHD             ; 8              ; Untyped                                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                ;
+; LPM_PIPELINE           ; 0              ; Untyped                                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                ;
+; CBXI_PARAMETER         ; lpm_divide_q9m ; Untyped                                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                         ;
++------------------------+----------------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Bin2Dec:Bin2Dec|lpm_divide:Div2 ;
++------------------------+----------------+----------------------------------------+
+; Parameter Name         ; Value          ; Type                                   ;
++------------------------+----------------+----------------------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                                ;
+; LPM_WIDTHD             ; 4              ; Untyped                                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                ;
+; LPM_PIPELINE           ; 0              ; Untyped                                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                ;
+; CBXI_PARAMETER         ; lpm_divide_jhm ; Untyped                                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                         ;
++------------------------+----------------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Bin2Dec:Bin2Dec|lpm_divide:Div4 ;
++------------------------+----------------+----------------------------------------+
+; Parameter Name         ; Value          ; Type                                   ;
++------------------------+----------------+----------------------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                                ;
+; LPM_WIDTHD             ; 4              ; Untyped                                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                ;
+; LPM_PIPELINE           ; 0              ; Untyped                                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                ;
+; CBXI_PARAMETER         ; lpm_divide_jhm ; Untyped                                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                         ;
++------------------------+----------------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Subtractor:Subtractor|lpm_divide:Mod0 ;
++------------------------+----------------+----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                         ;
++------------------------+----------------+----------------------------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                                      ;
+; LPM_WIDTHD             ; 8              ; Untyped                                      ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_PIPELINE           ; 0              ; Untyped                                      ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                      ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                      ;
+; CBXI_PARAMETER         ; lpm_divide_q9m ; Untyped                                      ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                      ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                      ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                               ;
++------------------------+----------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Bin2Dec:Bin2Dec|lpm_divide:Div1 ;
++------------------------+----------------+----------------------------------------+
+; Parameter Name         ; Value          ; Type                                   ;
++------------------------+----------------+----------------------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                                ;
+; LPM_WIDTHD             ; 4              ; Untyped                                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                ;
+; LPM_PIPELINE           ; 0              ; Untyped                                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                ;
+; CBXI_PARAMETER         ; lpm_divide_jhm ; Untyped                                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                         ;
++------------------------+----------------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Bin2Dec:Bin2Dec|lpm_divide:Div3 ;
++------------------------+----------------+----------------------------------------+
+; Parameter Name         ; Value          ; Type                                   ;
++------------------------+----------------+----------------------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                                ;
+; LPM_WIDTHD             ; 7              ; Untyped                                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                ;
+; LPM_PIPELINE           ; 0              ; Untyped                                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                ;
+; CBXI_PARAMETER         ; lpm_divide_mhm ; Untyped                                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                         ;
++------------------------+----------------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: StockMoedas:StockMoedas|lpm_divide:Div0 ;
++------------------------+----------------+------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                           ;
++------------------------+----------------+------------------------------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                                        ;
+; LPM_WIDTHD             ; 8              ; Untyped                                        ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                        ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                        ;
+; LPM_PIPELINE           ; 0              ; Untyped                                        ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                        ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                        ;
+; CBXI_PARAMETER         ; lpm_divide_nhm ; Untyped                                        ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                        ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                        ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                     ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                   ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                   ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                 ;
++------------------------+----------------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------+
+; Port Connectivity Checks: "Bin2Dec:Bin2Dec" ;
++-------+-------+----------+------------------+
+; Port  ; Type  ; Severity ; Details          ;
++-------+-------+----------+------------------+
+; reset ; Input ; Info     ; Stuck at GND     ;
++-------+-------+----------+------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "binary_counter:binary_counter" ;
++-------+-------+----------+--------------------------------+
+; Port  ; Type  ; Severity ; Details                        ;
++-------+-------+----------+--------------------------------+
+; reset ; Input ; Info     ; Stuck at GND                   ;
++-------+-------+----------+--------------------------------+
+
+
++---------------------------------------------------+
+; Port Connectivity Checks: "Comparador:Comparador" ;
++--------+-------+----------+-----------------------+
+; Port   ; Type  ; Severity ; Details               ;
++--------+-------+----------+-----------------------+
+; reset  ; Input ; Info     ; Stuck at GND          ;
+; enable ; Input ; Info     ; Stuck at VCC          ;
++--------+-------+----------+-----------------------+
+
+
++-----------------------------------------------+
+; Port Connectivity Checks: "RegisterN:Registo" ;
++--------+-------+----------+-------------------+
+; Port   ; Type  ; Severity ; Details           ;
++--------+-------+----------+-------------------+
+; enable ; Input ; Info     ; Stuck at VCC      ;
++--------+-------+----------+-------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Somador:Somador"                                                                     ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; allow ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------+
+; Port Connectivity Checks: "FrequencyDivider:FrequencyDivider" ;
++-------+-------+----------+------------------------------------+
+; Port  ; Type  ; Severity ; Details                            ;
++-------+-------+----------+------------------------------------+
+; reset ; Input ; Info     ; Stuck at GND                       ;
++-------+-------+----------+------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 53                          ;
+; cycloneiii_ff         ; 306                         ;
+;     ENA               ; 126                         ;
+;     ENA SCLR          ; 8                           ;
+;     SLD               ; 3                           ;
+;     plain             ; 169                         ;
+; cycloneiii_lcell_comb ; 1152                        ;
+;     arith             ; 380                         ;
+;         1 data inputs ; 3                           ;
+;         2 data inputs ; 157                         ;
+;         3 data inputs ; 220                         ;
+;     normal            ; 772                         ;
+;         0 data inputs ; 47                          ;
+;         1 data inputs ; 30                          ;
+;         2 data inputs ; 299                         ;
+;         3 data inputs ; 89                          ;
+;         4 data inputs ; 307                         ;
+;                       ;                             ;
+; Max LUT depth         ; 24.30                       ;
+; Average LUT depth     ; 9.99                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:04     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+    Info: Processing started: Mon Jun 03 19:23:00 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MaquinaCafef3 -c MaquinaCafef3
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file maquinacafebdf.bdf
+    Info (12023): Found entity 1: maquinacafebdf
+Info (12021): Found 2 design units, including 1 entities, in source file temporizador.vhd
+    Info (12022): Found design unit 1: Temporizador-Behavioral File: F:/ProjetoFinal/Fase3/temporizador.vhd Line: 13
+    Info (12023): Found entity 1: Temporizador File: F:/ProjetoFinal/Fase3/temporizador.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file subtractor.vhd
+    Info (12022): Found design unit 1: Subtractor-Behavioral File: F:/ProjetoFinal/Fase3/Subtractor.vhd Line: 14
+    Info (12023): Found entity 1: Subtractor File: F:/ProjetoFinal/Fase3/Subtractor.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file somador.vhd
+    Info (12022): Found design unit 1: Somador-Behavioral File: F:/ProjetoFinal/Fase3/Somador.vhd Line: 18
+    Info (12023): Found entity 1: Somador File: F:/ProjetoFinal/Fase3/Somador.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file registern.vhd
+    Info (12022): Found design unit 1: RegisterN-Behav File: F:/ProjetoFinal/Fase3/RegisterN.vhd Line: 15
+    Info (12023): Found entity 1: RegisterN File: F:/ProjetoFinal/Fase3/RegisterN.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file multiplexer.vhd
+    Info (12022): Found design unit 1: Multiplexer-Behavioral File: F:/ProjetoFinal/Fase3/Multiplexer.vhd Line: 16
+    Info (12023): Found entity 1: Multiplexer File: F:/ProjetoFinal/Fase3/Multiplexer.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file maquinacafef3.vhd
+    Info (12022): Found design unit 1: MaquinaCafef3-structural File: F:/ProjetoFinal/Fase3/MaquinaCafef3.vhd Line: 15
+    Info (12023): Found entity 1: MaquinaCafef3 File: F:/ProjetoFinal/Fase3/MaquinaCafef3.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file frequencydivider.vhd
+    Info (12022): Found design unit 1: FrequencyDivider-Behavioral File: F:/ProjetoFinal/Fase3/FrequencyDivider.vhd Line: 14
+    Info (12023): Found entity 1: FrequencyDivider File: F:/ProjetoFinal/Fase3/FrequencyDivider.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file debugging.vhd
+    Info (12022): Found design unit 1: debugging-Behavioral File: F:/ProjetoFinal/Fase3/debugging.vhd Line: 18
+    Info (12023): Found entity 1: debugging File: F:/ProjetoFinal/Fase3/debugging.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file debouncer.vhd
+    Info (12022): Found design unit 1: Debouncer-Behavioral File: F:/ProjetoFinal/Fase3/Debouncer.vhd Line: 18
+    Info (12023): Found entity 1: Debouncer File: F:/ProjetoFinal/Fase3/Debouncer.vhd Line: 8
+Info (12021): Found 2 design units, including 1 entities, in source file comparador_tb.vhd
+    Info (12022): Found design unit 1: Comparador_TB-Stimulus File: F:/ProjetoFinal/Fase3/Comparador_TB.vhd Line: 7
+    Info (12023): Found entity 1: Comparador_TB File: F:/ProjetoFinal/Fase3/Comparador_TB.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file comparador.vhd
+    Info (12022): Found design unit 1: Comparador-Behavioral File: F:/ProjetoFinal/Fase3/Comparador.vhd Line: 14
+    Info (12023): Found entity 1: Comparador File: F:/ProjetoFinal/Fase3/Comparador.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file blinking.vhd
+    Info (12022): Found design unit 1: Blinking-Behavioral File: F:/ProjetoFinal/Fase3/Blinking.vhd Line: 19
+    Info (12023): Found entity 1: Blinking File: F:/ProjetoFinal/Fase3/Blinking.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file binary_counter.vhd
+    Info (12022): Found design unit 1: binary_counter-rtl File: F:/ProjetoFinal/Fase3/binary_counter.vhd Line: 21
+    Info (12023): Found entity 1: binary_counter File: F:/ProjetoFinal/Fase3/binary_counter.vhd Line: 8
+Info (12021): Found 2 design units, including 1 entities, in source file bin2dec.vhd
+    Info (12022): Found design unit 1: Bin2Dec-Behavioral File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 15
+    Info (12023): Found entity 1: Bin2Dec File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file bcd.vhd
+    Info (12022): Found design unit 1: BCD-Behavioral File: F:/ProjetoFinal/Fase3/BCD.vhd Line: 10
+    Info (12023): Found entity 1: BCD File: F:/ProjetoFinal/Fase3/BCD.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file atribuidorvalor2.vhd
+    Info (12022): Found design unit 1: AtribuidorValor2-Behav File: F:/ProjetoFinal/Fase3/AtribuidorValor2.vhd Line: 13
+    Info (12023): Found entity 1: AtribuidorValor2 File: F:/ProjetoFinal/Fase3/AtribuidorValor2.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file atribuidorvalor.vhd
+    Info (12022): Found design unit 1: AtribuidorValor-Behav File: F:/ProjetoFinal/Fase3/AtribuidorValor.vhd Line: 13
+    Info (12023): Found entity 1: AtribuidorValor File: F:/ProjetoFinal/Fase3/AtribuidorValor.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file stockmoedas.vhd
+    Info (12022): Found design unit 1: StockMoedas-Behavioral File: F:/ProjetoFinal/Fase3/StockMoedas.vhd Line: 13
+    Info (12023): Found entity 1: StockMoedas File: F:/ProjetoFinal/Fase3/StockMoedas.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file delay.vhd
+    Info (12022): Found design unit 1: delay-Behavioral File: F:/ProjetoFinal/Fase3/delay.vhd Line: 13
+    Info (12023): Found entity 1: delay File: F:/ProjetoFinal/Fase3/delay.vhd Line: 4
+Info (12127): Elaborating entity "MaquinaCafef3" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at MaquinaCafef3.vhd(31): object "som_allow" assigned a value but never read File: F:/ProjetoFinal/Fase3/MaquinaCafef3.vhd Line: 31
+Warning (10873): Using initial value X (don't care) for net "LEDG[4..1]" at MaquinaCafef3.vhd(10) File: F:/ProjetoFinal/Fase3/MaquinaCafef3.vhd Line: 10
+Info (12129): Elaborating entity "FrequencyDivider" using architecture "A:behavioral" for hierarchy "FrequencyDivider:FrequencyDivider" File: F:/ProjetoFinal/Fase3/MaquinaCafef3.vhd Line: 65
+Info (12129): Elaborating entity "Multiplexer" using architecture "A:behavioral" for hierarchy "Multiplexer:multiplexer0" File: F:/ProjetoFinal/Fase3/MaquinaCafef3.vhd Line: 71
+Info (12129): Elaborating entity "AtribuidorValor" using architecture "A:behav" for hierarchy "AtribuidorValor:AtribuidorValor" File: F:/ProjetoFinal/Fase3/MaquinaCafef3.vhd Line: 88
+Info (12129): Elaborating entity "AtribuidorValor2" using architecture "A:behav" for hierarchy "AtribuidorValor2:AtribuidorValor2" File: F:/ProjetoFinal/Fase3/MaquinaCafef3.vhd Line: 95
+Info (12129): Elaborating entity "Somador" using architecture "A:behavioral" for hierarchy "Somador:Somador" File: F:/ProjetoFinal/Fase3/MaquinaCafef3.vhd Line: 101
+Info (12129): Elaborating entity "Subtractor" using architecture "A:behavioral" for hierarchy "Subtractor:Subtractor" File: F:/ProjetoFinal/Fase3/MaquinaCafef3.vhd Line: 112
+Info (12129): Elaborating entity "RegisterN" using architecture "A:behav" for hierarchy "RegisterN:Registo" File: F:/ProjetoFinal/Fase3/MaquinaCafef3.vhd Line: 122
+Info (12129): Elaborating entity "Comparador" using architecture "A:behavioral" for hierarchy "Comparador:Comparador" File: F:/ProjetoFinal/Fase3/MaquinaCafef3.vhd Line: 133
+Warning (10492): VHDL Process Statement warning at Comparador.vhd(22): signal "preco" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: F:/ProjetoFinal/Fase3/Comparador.vhd Line: 22
+Warning (10492): VHDL Process Statement warning at Comparador.vhd(36): signal "enable" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: F:/ProjetoFinal/Fase3/Comparador.vhd Line: 36
+Warning (10492): VHDL Process Statement warning at Comparador.vhd(37): signal "precounsigned" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: F:/ProjetoFinal/Fase3/Comparador.vhd Line: 37
+Warning (10492): VHDL Process Statement warning at Comparador.vhd(53): signal "precounsigned" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: F:/ProjetoFinal/Fase3/Comparador.vhd Line: 53
+Warning (10631): VHDL Process Statement warning at Comparador.vhd(32): inferring latch(es) for signal or variable "saida_reset", which holds its previous value in one or more paths through the process File: F:/ProjetoFinal/Fase3/Comparador.vhd Line: 32
+Info (10041): Inferred latch for "saida_reset" at Comparador.vhd(32) File: F:/ProjetoFinal/Fase3/Comparador.vhd Line: 32
+Info (12129): Elaborating entity "StockMoedas" using architecture "A:behavioral" for hierarchy "StockMoedas:StockMoedas" File: F:/ProjetoFinal/Fase3/MaquinaCafef3.vhd Line: 142
+Warning (10540): VHDL Signal Declaration warning at StockMoedas.vhd(19): used explicit default value for signal "five" because signal was never assigned a value File: F:/ProjetoFinal/Fase3/StockMoedas.vhd Line: 19
+Info (12129): Elaborating entity "binary_counter" using architecture "A:rtl" for hierarchy "binary_counter:binary_counter" File: F:/ProjetoFinal/Fase3/MaquinaCafef3.vhd Line: 150
+Info (12129): Elaborating entity "delay" using architecture "A:behavioral" for hierarchy "delay:delay" File: F:/ProjetoFinal/Fase3/MaquinaCafef3.vhd Line: 158
+Info (12129): Elaborating entity "Bin2Dec" using architecture "A:behavioral" for hierarchy "Bin2Dec:Bin2Dec" File: F:/ProjetoFinal/Fase3/MaquinaCafef3.vhd Line: 164
+Warning (10492): VHDL Process Statement warning at Bin2Dec.vhd(42): signal "cnt" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 42
+Warning (10492): VHDL Process Statement warning at Bin2Dec.vhd(43): signal "unidades" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 43
+Warning (10492): VHDL Process Statement warning at Bin2Dec.vhd(44): signal "dezenas" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 44
+Warning (10492): VHDL Process Statement warning at Bin2Dec.vhd(45): signal "centenas" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 45
+Warning (10492): VHDL Process Statement warning at Bin2Dec.vhd(46): signal "mil" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 46
+Warning (10631): VHDL Process Statement warning at Bin2Dec.vhd(21): inferring latch(es) for signal or variable "DecU", which holds its previous value in one or more paths through the process File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 21
+Warning (10631): VHDL Process Statement warning at Bin2Dec.vhd(21): inferring latch(es) for signal or variable "DecD", which holds its previous value in one or more paths through the process File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 21
+Warning (10631): VHDL Process Statement warning at Bin2Dec.vhd(21): inferring latch(es) for signal or variable "DecC", which holds its previous value in one or more paths through the process File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 21
+Warning (10631): VHDL Process Statement warning at Bin2Dec.vhd(21): inferring latch(es) for signal or variable "DecM", which holds its previous value in one or more paths through the process File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 21
+Info (10041): Inferred latch for "DecM[0]" at Bin2Dec.vhd(21) File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 21
+Info (10041): Inferred latch for "DecM[1]" at Bin2Dec.vhd(21) File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 21
+Info (10041): Inferred latch for "DecM[2]" at Bin2Dec.vhd(21) File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 21
+Info (10041): Inferred latch for "DecM[3]" at Bin2Dec.vhd(21) File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 21
+Info (10041): Inferred latch for "DecM[4]" at Bin2Dec.vhd(21) File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 21
+Info (10041): Inferred latch for "DecM[5]" at Bin2Dec.vhd(21) File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 21
+Info (10041): Inferred latch for "DecM[6]" at Bin2Dec.vhd(21) File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 21
+Info (10041): Inferred latch for "DecM[7]" at Bin2Dec.vhd(21) File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 21
+Info (10041): Inferred latch for "DecC[0]" at Bin2Dec.vhd(21) File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 21
+Info (10041): Inferred latch for "DecC[1]" at Bin2Dec.vhd(21) File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 21
+Info (10041): Inferred latch for "DecC[2]" at Bin2Dec.vhd(21) File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 21
+Info (10041): Inferred latch for "DecC[3]" at Bin2Dec.vhd(21) File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 21
+Info (10041): Inferred latch for "DecC[4]" at Bin2Dec.vhd(21) File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 21
+Info (10041): Inferred latch for "DecC[5]" at Bin2Dec.vhd(21) File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 21
+Info (10041): Inferred latch for "DecC[6]" at Bin2Dec.vhd(21) File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 21
+Info (10041): Inferred latch for "DecC[7]" at Bin2Dec.vhd(21) File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 21
+Info (10041): Inferred latch for "DecD[0]" at Bin2Dec.vhd(21) File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 21
+Info (10041): Inferred latch for "DecD[1]" at Bin2Dec.vhd(21) File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 21
+Info (10041): Inferred latch for "DecD[2]" at Bin2Dec.vhd(21) File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 21
+Info (10041): Inferred latch for "DecD[3]" at Bin2Dec.vhd(21) File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 21
+Info (10041): Inferred latch for "DecD[4]" at Bin2Dec.vhd(21) File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 21
+Info (10041): Inferred latch for "DecD[5]" at Bin2Dec.vhd(21) File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 21
+Info (10041): Inferred latch for "DecD[6]" at Bin2Dec.vhd(21) File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 21
+Info (10041): Inferred latch for "DecD[7]" at Bin2Dec.vhd(21) File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 21
+Info (10041): Inferred latch for "DecU[0]" at Bin2Dec.vhd(21) File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 21
+Info (10041): Inferred latch for "DecU[1]" at Bin2Dec.vhd(21) File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 21
+Info (10041): Inferred latch for "DecU[2]" at Bin2Dec.vhd(21) File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 21
+Info (10041): Inferred latch for "DecU[3]" at Bin2Dec.vhd(21) File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 21
+Info (10041): Inferred latch for "DecU[4]" at Bin2Dec.vhd(21) File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 21
+Info (10041): Inferred latch for "DecU[5]" at Bin2Dec.vhd(21) File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 21
+Info (10041): Inferred latch for "DecU[6]" at Bin2Dec.vhd(21) File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 21
+Info (10041): Inferred latch for "DecU[7]" at Bin2Dec.vhd(21) File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 21
+Info (12129): Elaborating entity "Blinking" using architecture "A:behavioral" for hierarchy "Blinking:Blinking" File: F:/ProjetoFinal/Fase3/MaquinaCafef3.vhd Line: 174
+Info (12129): Elaborating entity "BCD" using architecture "A:behavioral" for hierarchy "BCD:BCD0" File: F:/ProjetoFinal/Fase3/MaquinaCafef3.vhd Line: 188
+Info (278001): Inferred 10 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Bin2Dec:Bin2Dec|Mod2" File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 42
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Bin2Dec:Bin2Dec|Mod0" File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 36
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Bin2Dec:Bin2Dec|Div0" File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 37
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Bin2Dec:Bin2Dec|Mod1" File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 37
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Bin2Dec:Bin2Dec|Div2" File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 38
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Bin2Dec:Bin2Dec|Div4" File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 39
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Subtractor:Subtractor|Mod0" File: F:/ProjetoFinal/Fase3/Subtractor.vhd Line: 62
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Bin2Dec:Bin2Dec|Div1" File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 38
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Bin2Dec:Bin2Dec|Div3" File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 39
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "StockMoedas:StockMoedas|Div0" File: F:/ProjetoFinal/Fase3/StockMoedas.vhd Line: 34
+Info (12130): Elaborated megafunction instantiation "Bin2Dec:Bin2Dec|lpm_divide:Mod2" File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 42
+Info (12133): Instantiated megafunction "Bin2Dec:Bin2Dec|lpm_divide:Mod2" with the following parameter: File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 42
+    Info (12134): Parameter "LPM_WIDTHN" = "8"
+    Info (12134): Parameter "LPM_WIDTHD" = "8"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_q9m.tdf
+    Info (12023): Found entity 1: lpm_divide_q9m File: F:/ProjetoFinal/Fase3/db/lpm_divide_q9m.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_fkh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_fkh File: F:/ProjetoFinal/Fase3/db/sign_div_unsign_fkh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_i4f.tdf
+    Info (12023): Found entity 1: alt_u_div_i4f File: F:/ProjetoFinal/Fase3/db/alt_u_div_i4f.tdf Line: 26
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_7pc.tdf
+    Info (12023): Found entity 1: add_sub_7pc File: F:/ProjetoFinal/Fase3/db/add_sub_7pc.tdf Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
+    Info (12023): Found entity 1: add_sub_8pc File: F:/ProjetoFinal/Fase3/db/add_sub_8pc.tdf Line: 22
+Info (12130): Elaborated megafunction instantiation "Bin2Dec:Bin2Dec|lpm_divide:Div0" File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 37
+Info (12133): Instantiated megafunction "Bin2Dec:Bin2Dec|lpm_divide:Div0" with the following parameter: File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 37
+    Info (12134): Parameter "LPM_WIDTHN" = "8"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_jhm.tdf
+    Info (12023): Found entity 1: lpm_divide_jhm File: F:/ProjetoFinal/Fase3/db/lpm_divide_jhm.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_bkh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_bkh File: F:/ProjetoFinal/Fase3/db/sign_div_unsign_bkh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_a4f.tdf
+    Info (12023): Found entity 1: alt_u_div_a4f File: F:/ProjetoFinal/Fase3/db/alt_u_div_a4f.tdf Line: 26
+Info (12130): Elaborated megafunction instantiation "Subtractor:Subtractor|lpm_divide:Mod0" File: F:/ProjetoFinal/Fase3/Subtractor.vhd Line: 62
+Info (12133): Instantiated megafunction "Subtractor:Subtractor|lpm_divide:Mod0" with the following parameter: File: F:/ProjetoFinal/Fase3/Subtractor.vhd Line: 62
+    Info (12134): Parameter "LPM_WIDTHN" = "8"
+    Info (12134): Parameter "LPM_WIDTHD" = "8"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12130): Elaborated megafunction instantiation "Bin2Dec:Bin2Dec|lpm_divide:Div3" File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 39
+Info (12133): Instantiated megafunction "Bin2Dec:Bin2Dec|lpm_divide:Div3" with the following parameter: File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 39
+    Info (12134): Parameter "LPM_WIDTHN" = "8"
+    Info (12134): Parameter "LPM_WIDTHD" = "7"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_mhm.tdf
+    Info (12023): Found entity 1: lpm_divide_mhm File: F:/ProjetoFinal/Fase3/db/lpm_divide_mhm.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_ekh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_ekh File: F:/ProjetoFinal/Fase3/db/sign_div_unsign_ekh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_g4f.tdf
+    Info (12023): Found entity 1: alt_u_div_g4f File: F:/ProjetoFinal/Fase3/db/alt_u_div_g4f.tdf Line: 26
+Info (12130): Elaborated megafunction instantiation "StockMoedas:StockMoedas|lpm_divide:Div0" File: F:/ProjetoFinal/Fase3/StockMoedas.vhd Line: 34
+Info (12133): Instantiated megafunction "StockMoedas:StockMoedas|lpm_divide:Div0" with the following parameter: File: F:/ProjetoFinal/Fase3/StockMoedas.vhd Line: 34
+    Info (12134): Parameter "LPM_WIDTHN" = "8"
+    Info (12134): Parameter "LPM_WIDTHD" = "8"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_nhm.tdf
+    Info (12023): Found entity 1: lpm_divide_nhm File: F:/ProjetoFinal/Fase3/db/lpm_divide_nhm.tdf Line: 24
+Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
+    Info (13026): Duplicate LATCH primitive "Bin2Dec:Bin2Dec|DecC[6]" merged with LATCH primitive "Bin2Dec:Bin2Dec|DecC[5]" File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 21
+    Info (13026): Duplicate LATCH primitive "Bin2Dec:Bin2Dec|DecC[7]" merged with LATCH primitive "Bin2Dec:Bin2Dec|DecC[5]" File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 21
+    Info (13026): Duplicate LATCH primitive "Bin2Dec:Bin2Dec|DecM[5]" merged with LATCH primitive "Bin2Dec:Bin2Dec|DecC[5]" File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 21
+    Info (13026): Duplicate LATCH primitive "Bin2Dec:Bin2Dec|DecM[6]" merged with LATCH primitive "Bin2Dec:Bin2Dec|DecC[5]" File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 21
+    Info (13026): Duplicate LATCH primitive "Bin2Dec:Bin2Dec|DecM[7]" merged with LATCH primitive "Bin2Dec:Bin2Dec|DecC[5]" File: F:/ProjetoFinal/Fase3/Bin2Dec.vhd Line: 21
+Warning (13012): Latch Comparador:Comparador|saida_reset has unsafe behavior File: F:/ProjetoFinal/Fase3/Comparador.vhd Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Comparador:Comparador|s_currentState.statereset File: F:/ProjetoFinal/Fase3/Comparador.vhd Line: 16
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LEDG[1]" is stuck at GND File: F:/ProjetoFinal/Fase3/MaquinaCafef3.vhd Line: 10
+    Warning (13410): Pin "LEDG[2]" is stuck at GND File: F:/ProjetoFinal/Fase3/MaquinaCafef3.vhd Line: 10
+    Warning (13410): Pin "LEDG[3]" is stuck at GND File: F:/ProjetoFinal/Fase3/MaquinaCafef3.vhd Line: 10
+    Warning (13410): Pin "LEDG[4]" is stuck at GND File: F:/ProjetoFinal/Fase3/MaquinaCafef3.vhd Line: 10
+Info (286030): Timing-Driven Synthesis is running
+Info (17016): Found the following redundant logic cells in design
+    Info (17048): Logic cell "Bin2Dec:Bin2Dec|lpm_divide:Mod1|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider|alt_u_div_i4f:divider|add_sub_7_result_int[0]~0" File: F:/ProjetoFinal/Fase3/db/alt_u_div_i4f.tdf Line: 61
+    Info (17048): Logic cell "Bin2Dec:Bin2Dec|lpm_divide:Mod1|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider|alt_u_div_i4f:divider|add_sub_6_result_int[0]~14" File: F:/ProjetoFinal/Fase3/db/alt_u_div_i4f.tdf Line: 56
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 1248 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 10 input pins
+    Info (21059): Implemented 43 output pins
+    Info (21061): Implemented 1195 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 25 warnings
+    Info: Peak virtual memory: 4847 megabytes
+    Info: Processing ended: Mon Jun 03 19:23:23 2019
+    Info: Elapsed time: 00:00:23
+    Info: Total CPU time (on all processors): 00:00:39
+
+

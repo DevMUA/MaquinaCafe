@@ -1,0 +1,6 @@
+
+State Machine - |MaquinaCafef2|Comparador:Comparador|s_currentState
+Name s_currentState.statereset s_currentState.stateopen s_currentState.state0 
+s_currentState.state0 0 0 0 
+s_currentState.stateopen 0 1 1 
+s_currentState.statereset 1 0 1 

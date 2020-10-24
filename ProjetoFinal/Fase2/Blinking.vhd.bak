@@ -1,0 +1,17 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+use IEEE.NUMERIC_STD.all;
+
+entity Blinking is
+	port(clk : in std_logic;
+		  enable : in std_logic;
+		  blink1: out std_logic_vector(7 downto 0);
+			blink2: out std_logic_vector(7 downto 0);
+			blink3: out std_logic_vector(7 downto 0);
+			blink4: out std_logic_vector(7 downto 0));
+end Blinking;
+
+architecture Behavioral of Blinking is
+
+end Behavioral;
+	
